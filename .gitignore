@@ -1,0 +1,19 @@
+# Archivos zip
+*.zip
+
+# Entornos virtuales de Python
+.venv/
+venv/
+ENV/
+env/
+
+# IDE - PyCharm
+.idea/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+.md
