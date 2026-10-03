@@ -21,7 +21,7 @@ import sys
 
 import pygame
 
-from replay import leer
+from input_replay.replay import leer
 
 FONDO = (169, 169, 169)
 OBJETIVO = (100, 149, 237)

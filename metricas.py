@@ -21,7 +21,7 @@ import math
 import os
 import sys
 
-from replay import leer
+from input_replay.replay import leer
 
 
 def _dist(a, b):

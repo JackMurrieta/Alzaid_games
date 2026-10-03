@@ -1,0 +1,1 @@
+# Convierte y consolida el .jsonl a un .json estándar

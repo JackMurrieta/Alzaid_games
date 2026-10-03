@@ -1,0 +1,1 @@
+# Lee el .json / .jsonl y reproduce los eventos

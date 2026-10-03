@@ -54,7 +54,7 @@ import os
 import cv2
 import math
 
-from replay import Recorder
+from input_replay.replay import Recorder
 
 # Inicializar Pygame
 pygame.init()
