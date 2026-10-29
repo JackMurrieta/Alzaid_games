@@ -26,7 +26,7 @@ interfaz comoda: "dame donde estaba el paciente en el ms N".
 import glob
 import os
 
-from replay import leer
+from input_replay.replay import leer
 
 
 class Fantasma:

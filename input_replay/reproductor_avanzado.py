@@ -23,11 +23,10 @@ Controles:
 """
 
 import sys
-import math
 
 import pygame
 
-from replay import leer
+from input_replay.replay import leer
 
 # ============================= COLORES =====================================
 FONDO = (24, 26, 30)

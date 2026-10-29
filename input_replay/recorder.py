@@ -1,0 +1,1 @@
+# Captura las entradas y escribe línea por línea (.jsonl)
