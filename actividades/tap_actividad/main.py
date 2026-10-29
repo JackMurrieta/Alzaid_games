@@ -54,13 +54,17 @@ def main():
     # ============================================================================
 
     # Recorder para JSONL
+    # Guardar replays en carpeta relativa a este archivo
+    carpeta_replays = os.path.join(os.path.dirname(__file__), "replays")
+
     recorder = Recorder(
         actividad="tap",
         participante=config.participante,
         screen=(config.ancho_pantalla, config.alto_pantalla),
         config=config.to_dict(),
         seed=config.semilla,
-        activo=config.grabar_replay
+        activo=config.grabar_replay,
+        carpeta=carpeta_replays
     )
 
     # Detector de interacciones TAP
@@ -168,9 +172,19 @@ def main():
     print(f"Rondas completadas: {controller.obtener_total_rondas_completadas()}")
 
     if ruta_replay:
+        # Convertir ruta absoluta a relativa desde la raíz del proyecto
+        ruta_proyecto = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+        try:
+            ruta_relativa = os.path.relpath(ruta_replay, ruta_proyecto)
+            # Normalizar a forward slashes para compatibilidad con Git Bash en Windows
+            ruta_relativa = ruta_relativa.replace("\\", "/")
+        except ValueError:
+            # Si no se puede obtener ruta relativa, usar la absoluta
+            ruta_relativa = ruta_replay.replace("\\", "/")
+
         print(f"\nReplay guardado: {ruta_replay}")
-        print(f"  Ver replay:   python reproductor.py {ruta_replay}")
-        print(f"  Ver metricas: python metricas.py {ruta_replay}")
+        print(f"  Ver replay:   python input_replay/reproductor.py {ruta_relativa}")
+        print(f"  Ver metricas: python metricas.py {ruta_relativa}")
 
     print("=" * 70 + "\n")
 
